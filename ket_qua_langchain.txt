@@ -1,0 +1,29 @@
+REAL LANGCHAIN TOOLS + COMPILED LANGGRAPH WORKFLOWS
+{"time": "2026-10-02T14:07:04.236377+07:00", "langchain": "1.4.3", "langgraph": "1.2.12", "controller": "deterministic; no LLM"}
+ReAct | case=1 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+ReAct | case=2 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+ReAct | case=3 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+ReAct | case=4 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+ReAct | case=5 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+ReAct | case=6 | completed=False | status=NEEDS_ATTENTION | calls=['search_flights'] | PASS
+Plan-then-Execute | case=1 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Plan-then-Execute | case=2 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Plan-then-Execute | case=3 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Plan-then-Execute | case=4 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Plan-then-Execute | case=5 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Plan-then-Execute | case=6 | completed=False | status=NEEDS_ATTENTION | calls=['search_flights'] | PASS
+Hybrid | case=1 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Hybrid | case=2 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Hybrid | case=3 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Hybrid | case=4 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Hybrid | case=5 | completed=True | status=ISSUED | calls=['search_flights', 'hold_ticket', 'issue_ticket'] | PASS
+Hybrid | case=6 | completed=False | status=NEEDS_ATTENTION | calls=['search_flights'] | PASS
+
+KET QUA LANGCHAIN/LANGGRAPH
+agent             | success_rate | avg_steps | avg_tool_calls | avg_permission_checks | constraint_violations | avg_elapsed_ms
+------------------+--------------+-----------+----------------+-----------------------+-----------------------+---------------
+ReAct             | 0.83         | 11        | 2.67           | 1                     | 0                     | 2.36          
+Plan-then-Execute | 0.83         | 7         | 2.67           | 1                     | 0                     | 1.20          
+Hybrid            | 0.83         | 7         | 2.67           | 1                     | 0                     | 1.22          
+
+PASS: 18/18 expected outcomes; 15 mock tickets issued, 3 requests denied.

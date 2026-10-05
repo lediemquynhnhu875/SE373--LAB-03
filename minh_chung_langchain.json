@@ -1,0 +1,1023 @@
+{
+  "environment": {
+    "time": "2026-10-02T14:07:04.236377+07:00",
+    "langchain": "1.4.3",
+    "langgraph": "1.2.12",
+    "controller": "deterministic; no LLM"
+  },
+  "metrics": [
+    {
+      "agent": "ReAct",
+      "success_rate": 0.8333333333333334,
+      "avg_steps": 11,
+      "avg_tool_calls": 2.6666666666666665,
+      "avg_permission_checks": 1,
+      "constraint_violations": 0,
+      "avg_elapsed_ms": 2.357714964697758
+    },
+    {
+      "agent": "Plan-then-Execute",
+      "success_rate": 0.8333333333333334,
+      "avg_steps": 7,
+      "avg_tool_calls": 2.6666666666666665,
+      "avg_permission_checks": 1,
+      "constraint_violations": 0,
+      "avg_elapsed_ms": 1.1968056205660105
+    },
+    {
+      "agent": "Hybrid",
+      "success_rate": 0.8333333333333334,
+      "avg_steps": 7,
+      "avg_tool_calls": 2.6666666666666665,
+      "avg_permission_checks": 1,
+      "constraint_violations": 0,
+      "avg_elapsed_ms": 1.2169441518684228
+    }
+  ],
+  "runs": [
+    {
+      "scenario": 1,
+      "request": {
+        "user_name": "An",
+        "origin": "SGN",
+        "destination": "HAN",
+        "depart_date": "2026-10-10",
+        "passengers": 1,
+        "budget": 2000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "ReAct",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: observe",
+          "Observation: candidates=0, selected=False",
+          "LangGraph node: search",
+          "LangGraph node: observe",
+          "Observation: candidates=3, selected=False",
+          "LangGraph node: select",
+          "LangGraph node: observe",
+          "Observation: candidates=3, selected=True",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 7.072832901030779,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-B05EC4AB37",
+          "hold_code": "HOLD-04DD7F8B",
+          "passenger": "An",
+          "flight": {
+            "flight_id": "VJ142",
+            "airline": "Vietjet Air",
+            "route": "SGN->HAN",
+            "depart_date": "2026-10-10",
+            "depart_time": "11:30",
+            "arrive_time": "13:45",
+            "layovers": 0
+          },
+          "total_price": 1450000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 2,
+      "request": {
+        "user_name": "Binh",
+        "origin": "SGN",
+        "destination": "DAD",
+        "depart_date": "2026-10-12",
+        "passengers": 1,
+        "budget": 1000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "ReAct",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: observe",
+          "Observation: candidates=0, selected=False",
+          "LangGraph node: search",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=False",
+          "LangGraph node: select",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=True",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 2.0247497595846653,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-A402D06D56",
+          "hold_code": "HOLD-1F974D17",
+          "passenger": "Binh",
+          "flight": {
+            "flight_id": "VJ620",
+            "airline": "Vietjet Air",
+            "route": "SGN->DAD",
+            "depart_date": "2026-10-12",
+            "depart_time": "14:20",
+            "arrive_time": "15:40",
+            "layovers": 0
+          },
+          "total_price": 950000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 3,
+      "request": {
+        "user_name": "Chi",
+        "origin": "HAN",
+        "destination": "PQC",
+        "depart_date": "2026-10-15",
+        "passengers": 1,
+        "budget": 3300000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "ReAct",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: observe",
+          "Observation: candidates=0, selected=False",
+          "LangGraph node: search",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=False",
+          "LangGraph node: select",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=True",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.3580829836428165,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-8FC6188B3E",
+          "hold_code": "HOLD-06DF3FE0",
+          "passenger": "Chi",
+          "flight": {
+            "flight_id": "QH811",
+            "airline": "Bamboo Airways",
+            "route": "HAN->PQC",
+            "depart_date": "2026-10-15",
+            "depart_time": "15:00",
+            "arrive_time": "19:30",
+            "layovers": 1
+          },
+          "total_price": 3200000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 4,
+      "request": {
+        "user_name": "Dung",
+        "origin": "SGN",
+        "destination": "SIN",
+        "depart_date": "2026-10-20",
+        "passengers": 1,
+        "budget": 3500000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "ReAct",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: observe",
+          "Observation: candidates=0, selected=False",
+          "LangGraph node: search",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=False",
+          "LangGraph node: select",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=True",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.3710414059460163,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-646C2B35B6",
+          "hold_code": "HOLD-A9455DBF",
+          "passenger": "Dung",
+          "flight": {
+            "flight_id": "TR305",
+            "airline": "Scoot",
+            "route": "SGN->SIN",
+            "depart_date": "2026-10-20",
+            "depart_time": "15:10",
+            "arrive_time": "18:15",
+            "layovers": 0
+          },
+          "total_price": 3100000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 5,
+      "request": {
+        "user_name": "Ha",
+        "origin": "SGN",
+        "destination": "NRT",
+        "depart_date": "2026-11-05",
+        "passengers": 1,
+        "budget": 8000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "ReAct",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: observe",
+          "Observation: candidates=0, selected=False",
+          "LangGraph node: search",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=False",
+          "LangGraph node: select",
+          "LangGraph node: observe",
+          "Observation: candidates=2, selected=True",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.4074998907744884,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-0999250BB6",
+          "hold_code": "HOLD-E9425FDF",
+          "passenger": "Ha",
+          "flight": {
+            "flight_id": "CX766",
+            "airline": "Cathay Pacific",
+            "route": "SGN->NRT",
+            "depart_date": "2026-11-05",
+            "depart_time": "11:25",
+            "arrive_time": "21:10",
+            "layovers": 1
+          },
+          "total_price": 7400000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 6,
+      "request": {
+        "user_name": "Lan",
+        "origin": "SGN",
+        "destination": "HAN",
+        "depart_date": "2026-10-10",
+        "passengers": 1,
+        "budget": 1600000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": false
+      },
+      "trace": {
+        "agent_name": "ReAct",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: observe",
+          "Observation: candidates=0, selected=False",
+          "LangGraph node: search",
+          "LangGraph node: observe",
+          "Observation: candidates=3, selected=False",
+          "LangGraph node: select",
+          "LangGraph node: observe",
+          "Observation: candidates=3, selected=True",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 1,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": false,
+        "elapsed_ms": 0.9120828472077847,
+        "final_payload": {
+          "status": "NEEDS_ATTENTION",
+          "ticket_code": null,
+          "hold_code": null,
+          "passenger": "Lan",
+          "flight": {
+            "flight_id": "VJ142",
+            "airline": "Vietjet Air",
+            "route": "SGN->HAN",
+            "depart_date": "2026-10-10",
+            "depart_time": "11:30",
+            "arrive_time": "13:45",
+            "layovers": 0
+          },
+          "total_price": 1450000,
+          "errors": [
+            "Nguoi dung chua xac nhan cho phep dat ve.",
+            "Chua xuat ve.",
+            "Trang thai ve chua phai ISSUED."
+          ]
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights"
+      ]
+    },
+    {
+      "scenario": 1,
+      "request": {
+        "user_name": "An",
+        "origin": "SGN",
+        "destination": "HAN",
+        "depart_date": "2026-10-10",
+        "passengers": 1,
+        "budget": 2000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Plan-then-Execute",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: select",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.6658753156661987,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-9684CB80F3",
+          "hold_code": "HOLD-27474C7E",
+          "passenger": "An",
+          "flight": {
+            "flight_id": "VJ142",
+            "airline": "Vietjet Air",
+            "route": "SGN->HAN",
+            "depart_date": "2026-10-10",
+            "depart_time": "11:30",
+            "arrive_time": "13:45",
+            "layovers": 0
+          },
+          "total_price": 1450000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 2,
+      "request": {
+        "user_name": "Binh",
+        "origin": "SGN",
+        "destination": "DAD",
+        "depart_date": "2026-10-12",
+        "passengers": 1,
+        "budget": 1000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Plan-then-Execute",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: select",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.1907918378710747,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-86A7F90856",
+          "hold_code": "HOLD-4371160E",
+          "passenger": "Binh",
+          "flight": {
+            "flight_id": "VJ620",
+            "airline": "Vietjet Air",
+            "route": "SGN->DAD",
+            "depart_date": "2026-10-12",
+            "depart_time": "14:20",
+            "arrive_time": "15:40",
+            "layovers": 0
+          },
+          "total_price": 950000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 3,
+      "request": {
+        "user_name": "Chi",
+        "origin": "HAN",
+        "destination": "PQC",
+        "depart_date": "2026-10-15",
+        "passengers": 1,
+        "budget": 3300000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Plan-then-Execute",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: select",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.0642078705132008,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-2C786D6ACF",
+          "hold_code": "HOLD-C663A266",
+          "passenger": "Chi",
+          "flight": {
+            "flight_id": "QH811",
+            "airline": "Bamboo Airways",
+            "route": "HAN->PQC",
+            "depart_date": "2026-10-15",
+            "depart_time": "15:00",
+            "arrive_time": "19:30",
+            "layovers": 1
+          },
+          "total_price": 3200000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 4,
+      "request": {
+        "user_name": "Dung",
+        "origin": "SGN",
+        "destination": "SIN",
+        "depart_date": "2026-10-20",
+        "passengers": 1,
+        "budget": 3500000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Plan-then-Execute",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: select",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.0017920285463333,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-01F976A452",
+          "hold_code": "HOLD-F252EB77",
+          "passenger": "Dung",
+          "flight": {
+            "flight_id": "TR305",
+            "airline": "Scoot",
+            "route": "SGN->SIN",
+            "depart_date": "2026-10-20",
+            "depart_time": "15:10",
+            "arrive_time": "18:15",
+            "layovers": 0
+          },
+          "total_price": 3100000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 5,
+      "request": {
+        "user_name": "Ha",
+        "origin": "SGN",
+        "destination": "NRT",
+        "depart_date": "2026-11-05",
+        "passengers": 1,
+        "budget": 8000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Plan-then-Execute",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: select",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.324458047747612,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-110F50C107",
+          "hold_code": "HOLD-EE03B9E7",
+          "passenger": "Ha",
+          "flight": {
+            "flight_id": "CX766",
+            "airline": "Cathay Pacific",
+            "route": "SGN->NRT",
+            "depart_date": "2026-11-05",
+            "depart_time": "11:25",
+            "arrive_time": "21:10",
+            "layovers": 1
+          },
+          "total_price": 7400000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 6,
+      "request": {
+        "user_name": "Lan",
+        "origin": "SGN",
+        "destination": "HAN",
+        "depart_date": "2026-10-10",
+        "passengers": 1,
+        "budget": 1600000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": false
+      },
+      "trace": {
+        "agent_name": "Plan-then-Execute",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: select",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 1,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": false,
+        "elapsed_ms": 0.9337086230516434,
+        "final_payload": {
+          "status": "NEEDS_ATTENTION",
+          "ticket_code": null,
+          "hold_code": null,
+          "passenger": "Lan",
+          "flight": {
+            "flight_id": "VJ142",
+            "airline": "Vietjet Air",
+            "route": "SGN->HAN",
+            "depart_date": "2026-10-10",
+            "depart_time": "11:30",
+            "arrive_time": "13:45",
+            "layovers": 0
+          },
+          "total_price": 1450000,
+          "errors": [
+            "Nguoi dung chua xac nhan cho phep dat ve.",
+            "Chua xuat ve.",
+            "Trang thai ve chua phai ISSUED."
+          ]
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights"
+      ]
+    },
+    {
+      "scenario": 1,
+      "request": {
+        "user_name": "An",
+        "origin": "SGN",
+        "destination": "HAN",
+        "depart_date": "2026-10-10",
+        "passengers": 1,
+        "budget": 2000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Hybrid",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: evaluate",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.6259998083114624,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-3F0691B0E0",
+          "hold_code": "HOLD-ED748F22",
+          "passenger": "An",
+          "flight": {
+            "flight_id": "VJ142",
+            "airline": "Vietjet Air",
+            "route": "SGN->HAN",
+            "depart_date": "2026-10-10",
+            "depart_time": "11:30",
+            "arrive_time": "13:45",
+            "layovers": 0
+          },
+          "total_price": 1450000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 2,
+      "request": {
+        "user_name": "Binh",
+        "origin": "SGN",
+        "destination": "DAD",
+        "depart_date": "2026-10-12",
+        "passengers": 1,
+        "budget": 1000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Hybrid",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: evaluate",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.1332500725984573,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-4BAC88553D",
+          "hold_code": "HOLD-096768C6",
+          "passenger": "Binh",
+          "flight": {
+            "flight_id": "VJ620",
+            "airline": "Vietjet Air",
+            "route": "SGN->DAD",
+            "depart_date": "2026-10-12",
+            "depart_time": "14:20",
+            "arrive_time": "15:40",
+            "layovers": 0
+          },
+          "total_price": 950000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 3,
+      "request": {
+        "user_name": "Chi",
+        "origin": "HAN",
+        "destination": "PQC",
+        "depart_date": "2026-10-15",
+        "passengers": 1,
+        "budget": 3300000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Hybrid",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: evaluate",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.3736658729612827,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-7DAB06FA79",
+          "hold_code": "HOLD-BB178D8D",
+          "passenger": "Chi",
+          "flight": {
+            "flight_id": "QH811",
+            "airline": "Bamboo Airways",
+            "route": "HAN->PQC",
+            "depart_date": "2026-10-15",
+            "depart_time": "15:00",
+            "arrive_time": "19:30",
+            "layovers": 1
+          },
+          "total_price": 3200000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 4,
+      "request": {
+        "user_name": "Dung",
+        "origin": "SGN",
+        "destination": "SIN",
+        "depart_date": "2026-10-20",
+        "passengers": 1,
+        "budget": 3500000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Hybrid",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: evaluate",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.3182079419493675,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-C2E035A825",
+          "hold_code": "HOLD-C5FFC424",
+          "passenger": "Dung",
+          "flight": {
+            "flight_id": "TR305",
+            "airline": "Scoot",
+            "route": "SGN->SIN",
+            "depart_date": "2026-10-20",
+            "depart_time": "15:10",
+            "arrive_time": "18:15",
+            "layovers": 0
+          },
+          "total_price": 3100000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 5,
+      "request": {
+        "user_name": "Ha",
+        "origin": "SGN",
+        "destination": "NRT",
+        "depart_date": "2026-11-05",
+        "passengers": 1,
+        "budget": 8000000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": true
+      },
+      "trace": {
+        "agent_name": "Hybrid",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: evaluate",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 3,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": true,
+        "elapsed_ms": 1.1100000701844692,
+        "final_payload": {
+          "status": "ISSUED",
+          "ticket_code": "TICKET-C4F1DC1E9F",
+          "hold_code": "HOLD-DD7C4A74",
+          "passenger": "Ha",
+          "flight": {
+            "flight_id": "CX766",
+            "airline": "Cathay Pacific",
+            "route": "SGN->NRT",
+            "depart_date": "2026-11-05",
+            "depart_time": "11:25",
+            "arrive_time": "21:10",
+            "layovers": 1
+          },
+          "total_price": 7400000,
+          "errors": []
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights",
+        "hold_ticket",
+        "issue_ticket"
+      ]
+    },
+    {
+      "scenario": 6,
+      "request": {
+        "user_name": "Lan",
+        "origin": "SGN",
+        "destination": "HAN",
+        "depart_date": "2026-10-10",
+        "passengers": 1,
+        "budget": 1600000,
+        "max_layovers": 1,
+        "cabin": "economy",
+        "consent_to_book": false
+      },
+      "trace": {
+        "agent_name": "Hybrid",
+        "steps": [
+          "LangGraph node: validate",
+          "LangGraph node: plan",
+          "Plan: search -> select/validate -> permission -> book -> handoff",
+          "LangGraph node: search",
+          "LangGraph node: evaluate",
+          "LangGraph node: book",
+          "LangGraph node: handoff"
+        ],
+        "tool_calls": 1,
+        "permission_checks": 1,
+        "constraint_violations": [],
+        "completed": false,
+        "elapsed_ms": 0.7405411452054977,
+        "final_payload": {
+          "status": "NEEDS_ATTENTION",
+          "ticket_code": null,
+          "hold_code": null,
+          "passenger": "Lan",
+          "flight": {
+            "flight_id": "VJ142",
+            "airline": "Vietjet Air",
+            "route": "SGN->HAN",
+            "depart_date": "2026-10-10",
+            "depart_time": "11:30",
+            "arrive_time": "13:45",
+            "layovers": 0
+          },
+          "total_price": 1450000,
+          "errors": [
+            "Nguoi dung chua xac nhan cho phep dat ve.",
+            "Chua xuat ve.",
+            "Trang thai ve chua phai ISSUED."
+          ]
+        }
+      },
+      "langchain_tool_calls": [
+        "search_flights"
+      ]
+    }
+  ]
+}
